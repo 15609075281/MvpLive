@@ -20,6 +20,8 @@ public class MainFragmentAdapter extends FragmentPagerAdapter {
 
     public MainFragmentAdapter(FragmentManager fm) {
         super(fm);
+    public MainFragmentAdapter(FragmentManager fragmentmanager) {
+        super(fragmentmanager);
     }
 
     @Override
