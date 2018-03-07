@@ -17,9 +17,8 @@ import live.mvplive.ui.fragment.first_layer.PersonFragment;
 public class MainFragmentAdapter extends FragmentPagerAdapter {
 
     private String[] mTitles = new String[]{"首页", "社区", "消息", "我的"};
+ 
 
-    public MainFragmentAdapter(FragmentManager fm) {
-        super(fm);
     public MainFragmentAdapter(FragmentManager fragmentmanager) {
         super(fragmentmanager);
     }
