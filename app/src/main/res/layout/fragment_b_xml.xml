@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:id="@+id/fb1"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="#fddddd"
+        android:gravity="center"
+        android:text="我是第三个界面"
+        android:textColor="#fd2064"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/fb2"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="#fddddd"
+        android:gravity="center"
+        android:text="我是第三1个界面"
+        android:textColor="#fd2064"
+        android:textSize="16sp" />
+    <com.xiaochen.progressroundbutton.AnimDownloadProgressButton
+        android:layout_marginTop="20dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/anim_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:progressbtn_backgroud_color="@android:color/holo_orange_light"
+        app:progressbtn_backgroud_second_color="@android:color/holo_green_light"/>
+</LinearLayout>
+</RelativeLayout>

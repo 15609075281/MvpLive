@@ -1,0 +1,30 @@
+eg:{
+    微信登录
+
+  //设置平台手动授权
+                final Platform weixin = ShareSDK.getPlatform(Wechat.NAME);
+                if(weixin.isAuthValid()){
+                    weixin.removeAccount(true);
+                }
+                weixin.setPlatformActionListener(new PlatformActionListener() {
+                    @Override
+                    public void onComplete(Platform platform, int i, final HashMap<String, Object> hashMap) {
+                        Log.d("ShareSDK", "onComplete ---->  登录成功" + platform.getDb().exportData());
+                    }
+
+                    @Override
+                    public void onError(Platform platform, int i, Throwable throwable) {
+                        Log.d("ShareSDK", "onError ---->  登录失败" + throwable.toString());
+                        Log.d("ShareSDK", "onError ---->  登录失败" + throwable.getStackTrace().toString());
+                        Log.d("ShareSDK", "onError ---->  登录失败" + throwable.getMessage());
+                    }
+
+                    @Override
+                    public void onCancel(Platform platform, int i) {
+                        Log.d("ShareSDK", "onCancel ---->  登录取消");
+                    }
+                });
+                weixin.SSOSetting(false);
+                weixin.showUser(null);
+
+}

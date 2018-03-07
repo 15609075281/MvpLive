@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "live.mvplive"
+        minSdkVersion 18
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+//MOb SMS
+repositories {
+    flatDir {
+        dirs 'libs' //就是你放aar的目录地址
+    }
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+}
+//Tab 微信菜单
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+        google()
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //noinspection GradleDynamicVersion,GradleCompatible
+    compile 'com.android.support:appcompat-v7:25.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    //tab菜单
+    compile 'com.android.support:design:26.0.0'
+
+    //leaks leakcanary
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    //Xutils 3
+    compile 'org.xutils:xutils:3.5.0'
+    //Mob SMS
+    compile name: 'SMSSDK-3.0.0', ext: 'aar'
+    compile name: 'SMSSDKGUI-3.0.0', ext: 'aar'
+    //Mob ShareSDK
+    compile files('libs/ShareSDK-Core-3.1.0.jar')
+    compile files('libs/ShareSDK-Alipay-3.1.0.jar')
+    //Tab  仿微信菜单
+    compile 'com.github.tengyukun:TabsIndicator:v1.0'
+    //Banner
+    compile 'com.github.dongjunkun:BannerLayout:1.0.6'
+    //picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    //pickers 选择器
+    compile 'com.github.addappcn:android-pickers:1.0.1'
+    //非常美得textview
+    compile 'com.github.chenBingX:SuperTextView:v1.4'
+    //更换头像
+    compile 'com.jph.takephoto:takephoto_library:4.0.3'
+    //下载进度条
+
+    compile 'com.xiaochendev.progressroundbtn:library:0.9.1'
+    //播放器
+    compile 'cn.ittiger:TigerVideoPlayer:1.3'
+    // 微信支付
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+
+    compile 'com.abrahamcaijin.commonutil:CommonUtil:1.0.2'
+}
