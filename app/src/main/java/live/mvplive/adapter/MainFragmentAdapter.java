@@ -11,7 +11,7 @@ import live.mvplive.ui.fragment.first_layer.PersonFragment;
 /**
  * Created by Administrator on 2017/11/2 0002.
  *
- *  主界面  控制器  adapter
+ *  主界面  控制器  adapter     试一下Git是否同步
  */
 
 public class MainFragmentAdapter extends FragmentPagerAdapter {
